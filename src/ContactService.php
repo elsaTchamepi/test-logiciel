@@ -96,7 +96,8 @@ class ContactService {
      * @return bool true si ok, false si erreur SQL
      * @throws invalidInputException en cas d'erreur de paramètre
      */
-    public function createContact($nom, $prenom) {
+    public function createContact($nom, $prenom) 
+    {
         if (empty($nom) && !is_string($nom)) {
             throw new invalidInputException('le nom  doit être renseigné');
         }
@@ -119,7 +120,8 @@ class ContactService {
      * @return bool true si ok, false si erreur SQL
      * @throws invalidInputException en cas d'erreur de paramètre
      */
-    public function updateContact($id, $nom, $prenom) {
+    public function updateContact($id, $nom, $prenom) 
+    {
         if (empty($nom) && !is_string($nom)) {
             throw new invalidInputException('le nom  doit être renseigné');
         }
@@ -148,7 +150,8 @@ class ContactService {
      * @return bool true si SQL ok, false si non
      * @throws invalidInputException en cas d'erreur de paramètre
      */
-    public function deleteContact($id) {
+    public function deleteContact($id) 
+    {
         if (null === $id) {
             throw new invalidInputException("l'id doit être renseigné");
         }
