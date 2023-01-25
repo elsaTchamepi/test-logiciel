@@ -70,7 +70,8 @@ final class ContactServiceUnitTest extends TestCase {
         $this->assertSame($expectedArray, $contactService->contactService($contactService));
     }
 
-    public function testDeleteContactWithTextAsId() {
+    public function testDeleteContactWithTextAsId()
+     {
         $this->expectException(Exception::class);
         $this->expectExceptionMessage("l'id doit être un entier non nul");
         $contactService = new ContactService();
