@@ -33,7 +33,8 @@ class ContactService
      * @return mixed le retour de la requete SQL
      * @throws invalidInputException en cas d'erreur de paramètre
      */
-    public function getContact($id) {
+    public function getContact($id) 
+    {
         if (empty($id)) 
         {
             throw new invalidInputException("l'id doit être renseigné");
@@ -47,7 +48,8 @@ class ContactService
         $row = $req->fetchAll();
 
         // si req ok (!false)
-        if ($req) {
+        if ($req) 
+        {
             // on renvoie le 1er et seul élément du tableau de résultats
             return $row[0];
         }
@@ -92,7 +94,8 @@ class ContactService
         $row = $req->fetchAll();
 
         // si req ok (!false)
-        if ($req) {
+        if ($req)  
+        {
             return $row;
         }
     }
@@ -106,10 +109,12 @@ class ContactService
      */
     public function createContact($nom, $prenom) 
     {
-        if (empty($nom) && !is_string($nom)) {
+        if (empty($nom) && !is_string($nom)) 
+        {
             throw new invalidInputException('le nom  doit être renseigné');
         }
-        if (empty($prenom) && !is_string($prenom)) {
+        if (empty($prenom) && !is_string($prenom)) 
+        {
             throw new invalidInputException('le prenom doit être renseigné');
         }
         $stmt = $this->pdo->prepare('INSERT INTO contacts (nom, prenom) VALUES (:nom, :prenom)');
@@ -130,7 +135,8 @@ class ContactService
      */
     public function updateContact($id, $nom, $prenom) 
     {
-        if (empty($nom) && !is_string($nom)) {
+        if (empty($nom) && !is_string($nom)) 
+        {
             throw new invalidInputException('le nom  doit être renseigné');
         }
 
@@ -140,7 +146,8 @@ class ContactService
         if (!is_numeric($id) || $id < 0) {
             throw new invalidInputException("l'id doit être un entier non nul");
         }
-        if (empty($prenom) && !is_string($prenom)) {
+        if (empty($prenom) && !is_string($prenom)) 
+        {
             throw new invalidInputException('le prenom doit être renseigné');
         }
         $stmt = $this->pdo->prepare('UPDATE contacts SET nom=:nom, prenom=:prenom where id=:id');
@@ -160,10 +167,12 @@ class ContactService
      */
     public function deleteContact($id) 
     {
-        if (null === $id) {
+        if (null === $id) 
+        {
             throw new invalidInputException("l'id doit être renseigné");
         }
-        if (!is_numeric($id) || $id < 0) {
+        if (!is_numeric($id) || $id < 0) 
+        {
             throw new invalidInputException("l'id doit être un entier non nul");
         }
         $stmt = $this->pdo->prepare('DELETE from contacts where id=:id');
