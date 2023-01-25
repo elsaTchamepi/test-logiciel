@@ -11,14 +11,16 @@
 
 require 'invalidInputException.php';
 
-class ContactService {
+class ContactService 
+{
     public $pdo;
 
     /**
      * ContactService constructor.
      * Initialise la BDD
      */
-    public function __construct() {
+    public function __construct() 
+    {
         $this->pdo = new PDO('sqlite:' . __DIR__ . '/contacts.sqlite');
 
         $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -55,7 +57,8 @@ class ContactService {
      * @return array le retour de la requete SQL
      * @throws invalidInputException en cas d'erreur de paramètre
      */
-    public function searchContact($search) {
+    public function searchContact($search) 
+    {
         if (empty($search)) {
             throw new invalidInputException('search doit être renseigné');
         }
@@ -78,7 +81,8 @@ class ContactService {
      * Récupère tous les contacts en BDD
      * @return array le retour de la requete SQL
      */
-    public function getAllContacts() {
+    public function getAllContacts() 
+    {
         $req = $this->pdo->query('SELECT * from contacts');
 
         $row = $req->fetchAll();
@@ -169,7 +173,8 @@ class ContactService {
      * Supprime tous les contacts
      * @return false|PDOStatement
      */
-    public function deleteAllContact() {
+    public function deleteAllContact() 
+    {
         return $this->pdo->query('DELETE from contacts');
     }
 }
