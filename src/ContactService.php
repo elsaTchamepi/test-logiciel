@@ -63,11 +63,11 @@ class ContactService
     {
         if (empty($search)) 
         {
-            throw new invalidInputException('search doit être renseigné');
+        throw new invalidInputException('search doit être renseigné');
         }
         if (!is_string($search)) 
         {
-            throw new invalidInputException('search doit être une chaine de caractères');
+        throw new invalidInputException('search doit être une chaine de caractères');
         }
         $req = "SELECT * from contacts where nom like '%" . $search . "%' or prenom like '%" . $search . "%'";
 
@@ -77,7 +77,7 @@ class ContactService
 
         // si req ok (!false)
         if ($res) {
-            return $row;
+        return $row;
         }
     }
 
