@@ -13,5 +13,9 @@
             "email": "94789933+elsaTchamepi@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {
+        "ext-pdo_sqlite": "*",
+        "ext-mbstring": "*",
+        "phpunit/phpunit": "^9.5"
+    }
 }
