@@ -22,17 +22,20 @@ require __DIR__ . '/../../src/ContactService.php';
 final class ContactServiceUnitTest extends TestCase {
     private $contactService;
 
-    public function __construct(string $name = null, array $data = [], $dataName = '') {
+    public function __construct(string $name = null, array $data = [], $dataName = '') 
+    {
         parent::__construct($name, $data, $dataName);
         $this->contactService = new ContactService();
     }
 
-    public function testCreationContactWithoutAnyText() {
+    public function testCreationContactWithoutAnyText()
+     {
         $ContactServiceUnitTest = new \Tests\uniTests\ContactServiceUnitTest(\Mockery::mock('\Tests\uniTests\AbstractPdoFacade'));
         $this->assertEquals(new \src\ContactService("foo"), $ContactServiceUnitTest->createContact("foo"));
     }
 
-    public function testCreationContactWithoutPrenom() {
+    public function testCreationContactWithoutPrenom() 
+    {
 
         $this->expectException(Exception::class);
         $this->expectExceptionMessage('le prenom doit être renseigné');
@@ -41,7 +44,8 @@ final class ContactServiceUnitTest extends TestCase {
     }
     
 
-    public function testCreationContactWithoutNom() {
+    public function testCreationContactWithoutNom()
+    {
         $this->expectException(Exception::class);
         $this->expectExceptionMessage('le nom  doit être renseigné');
         $contactService = new ContactService();
@@ -52,7 +56,8 @@ final class ContactServiceUnitTest extends TestCase {
         
     }
 
-    public function testModifyContactWithInvalidId() {
+    public function testModifyContactWithInvalidId() 
+    {
         $contactService = new ContactService();
 
         $contactService = "
