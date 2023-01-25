@@ -1,6 +1,7 @@
 {
     "name": "utilisateur/test-logiciel",
     "type": "project",
+    "description": "project Test",
     "license": "AGPL-3.0-only",
     "autoload": {
         "psr-4": {
