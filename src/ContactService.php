@@ -34,10 +34,12 @@ class ContactService
      * @throws invalidInputException en cas d'erreur de paramètre
      */
     public function getContact($id) {
-        if (empty($id)) {
+        if (empty($id)) 
+        {
             throw new invalidInputException("l'id doit être renseigné");
         }
-        if (!is_numeric($id) || $id < 0) {
+        if (!is_numeric($id) || $id < 0) 
+        {
             throw new invalidInputException("l'id doit être un entier non nul");
         }
         $req = $this->pdo->query('SELECT * from contacts where id =' . $id);
@@ -59,10 +61,12 @@ class ContactService
      */
     public function searchContact($search) 
     {
-        if (empty($search)) {
+        if (empty($search)) 
+        {
             throw new invalidInputException('search doit être renseigné');
         }
-        if (!is_string($search)) {
+        if (!is_string($search)) 
+        {
             throw new invalidInputException('search doit être une chaine de caractères');
         }
         $req = "SELECT * from contacts where nom like '%" . $search . "%' or prenom like '%" . $search . "%'";
