@@ -135,10 +135,10 @@ class ContactService
         }
 
         if (empty($id)) {
-            throw new invalidInputException("l'id doit être renseigné");
+            throw new invalidInputException(" id doit être renseigné");
         }
         if (!is_numeric($id) || $id < 0) {
-            throw new invalidInputException("l'id doit être un entier non nul");
+            throw new invalidInputException(" id doit être un entier non nul");
         }
         if (empty($prenom) && !is_string($prenom)) {
             throw new invalidInputException('le prenom doit être renseigné');
