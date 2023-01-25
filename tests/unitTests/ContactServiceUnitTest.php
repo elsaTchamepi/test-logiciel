@@ -77,3 +77,4 @@ final class ContactServiceUnitTest extends TestCase {
         $contactService->deleteContact("zare");
     }
 }
+

@@ -1,7 +1,17 @@
 {
-    "require": {
-        "ext-pdo_sqlite": "*",
-        "ext-mbstring": "*",
-        "phpunit/phpunit": "^9.5"
-    }
+    "name": "utilisateur/test-logiciel",
+    "type": "project",
+    "license": "AGPL-3.0-only",
+    "autoload": {
+        "psr-4": {
+            "Utilisateur\\TestLogiciel\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "elsaTchamepi",
+            "email": "94789933+elsaTchamepi@users.noreply.github.com"
+        }
+    ],
+    "require": {}
 }
